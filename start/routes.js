@@ -32,6 +32,7 @@ Route.group(() => {
   Route.get('nodes', 'NodeController.index').as('nodes.index')
 
   Route.get('videos/:id', 'VideoController.show').as('videos.show')
+  Route.get('lessons/:id', 'LessonController.show').as('lessons.show')
 }).prefix('api/v1').namespace('Api')
 
 Route.group(() => {

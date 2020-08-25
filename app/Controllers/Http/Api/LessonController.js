@@ -9,6 +9,12 @@ class LessonController {
     let lessons = await Lesson.query().where({status: 0, type: type}).paginate(page, limit)
     return lessons
   }
+
+  async show ({ params }) {
+    const { id } = params
+    const lesson = await Lesson.find(id)
+    return lesson
+  }
 }
 
 module.exports = LessonController
