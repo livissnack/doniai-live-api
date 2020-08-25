@@ -30,6 +30,8 @@ Route.group(() => {
   Route.get('videos', 'VideoController.index').as('videos.index')
 
   Route.get('nodes', 'NodeController.index').as('nodes.index')
+
+  Route.get('videos/:id', 'VideoController.show').as('videos.show')
 }).prefix('api/v1').namespace('Api')
 
 Route.group(() => {
@@ -39,7 +41,7 @@ Route.group(() => {
   Route.get('lessons/:id', 'LessonController.show').as('lessons.show')
   Route.get('articles/:id', 'ArticleController.show').as('articles.show')
   Route.get('discusses/:id', 'DiscussController.show').as('discusses.show')
-  Route.get('videos/:id', 'VideoController.show').as('videos.show')
+  // Route.get('videos/:id', 'VideoController.show').as('videos.show')
 
   Route.get('article_comments', 'ArticleCommentController.index').as('article_comments.index')
   Route.get('discuss_comments', 'DiscussCommentController.index').as('discuss_comments.index')
