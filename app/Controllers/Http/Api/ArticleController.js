@@ -9,7 +9,7 @@ class ArticleController {
   }
 
   async show ({ params }) {
-    const { id } = params.id
+    const { id } = params
     const article = await Article.find(id)
     return article
   }

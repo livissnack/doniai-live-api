@@ -9,7 +9,7 @@ class DiscussController {
   }
 
   async show ({ params }) {
-    const { id } = params.id
+    const { id } = params
     const discuss = await Discuss.find(id)
     return discuss
   }

@@ -14,7 +14,7 @@ class VideoController {
   }
 
   async show ({ params }) {
-    const { id } = params.id
+    const { id } = params
     const video = await Video.find(id)
     return video
   }
