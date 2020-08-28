@@ -21,7 +21,7 @@ Route.get('/', 'TestController.index')
 /* frontend all api routers */
 Route.group(() => {
   Route.post('users/login', 'UserController.login')
-  Route.post('users/logout', 'UserController.logout')
+  Route.post('users/logout', 'UserController.logout').middleware('auth')
   Route.post('users/register', 'UserController.register')
 
   Route.get('lessons', 'LessonController.index').as('lessons.index')
