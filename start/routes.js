@@ -36,7 +36,7 @@ Route.group(() => {
 }).prefix('api/v1').namespace('Api')
 
 Route.group(() => {
-  Route.get('users/:id', 'UserController.show').as('users.show')
+  Route.get('user', 'UserController.show').as('users.show')
   Route.put('users/:id', 'UserController.update').as('users.update')
 
   Route.get('lessons/:id', 'LessonController.show').as('lessons.show')

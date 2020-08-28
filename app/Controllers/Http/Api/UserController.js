@@ -21,10 +21,7 @@ class UserController {
     return await auth.authenticator('jwt').revokeTokens([refreshToken])
   }
 
-  show ({ auth, params }) {
-    if (auth.user.id !== Number(params.id)) {
-      return "You cannot see someone else's profile"
-    }
+  show ({ auth }) {
     return auth.user
   }
 
