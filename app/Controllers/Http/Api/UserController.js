@@ -17,7 +17,8 @@ class UserController {
   }
 
   async logout ({ auth }) {
-    return await auth.logout()
+    const refreshToken = ''
+    return await auth.authenticator('jwt').revokeTokens([refreshToken])
   }
 
   show ({ auth, params }) {
