@@ -27,6 +27,7 @@ Route.group(() => {
   Route.get('lessons', 'LessonController.index').as('lessons.index')
   Route.get('articles', 'ArticleController.index').as('articles.index')
   Route.get('discusses', 'DiscussController.index').as('discusses.index')
+  Route.post('discusses', 'DiscussController.store').as('discusses.store').middleware('auth')
   Route.get('videos', 'VideoController.index').as('videos.index')
 
   Route.get('nodes', 'NodeController.index').as('nodes.index')
@@ -46,5 +47,6 @@ Route.group(() => {
 
   Route.get('article_comments', 'ArticleCommentController.index').as('article_comments.index')
   Route.get('discuss_comments', 'DiscussCommentController.index').as('discuss_comments.index')
+  Route.post('discuss_comments', 'DiscussCommentController.store').as('discuss_comments.store')
   Route.get('video_comments', 'VideoCommentController.index').as('video_comments.index')
 }).prefix('api/v1').namespace('Api')
