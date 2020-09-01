@@ -47,6 +47,6 @@ Route.group(() => {
 
   Route.get('article_comments', 'ArticleCommentController.index').as('article_comments.index')
   Route.get('discuss_comments', 'DiscussCommentController.index').as('discuss_comments.index')
-  Route.post('discuss_comments', 'DiscussCommentController.store').as('discuss_comments.store')
+  Route.post('discuss_comments', 'DiscussCommentController.store').as('discuss_comments.store').middleware('auth')
   Route.get('video_comments', 'VideoCommentController.index').as('video_comments.index')
 }).prefix('api/v1').namespace('Api')
