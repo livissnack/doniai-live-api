@@ -10,12 +10,12 @@ class DiscussController {
     if(node_id !== '') {
       filters.node_id = node_id
     }
-    return await Discuss.query().where(filters).paginate(page, limit)
+    return await Discuss.query().with('user').with('node').where(filters).paginate(page, limit)
   }
 
   async show ({ params }) {
     const { id } = params
-    const discuss = await Discuss.find(id)
+    const discuss = await Discuss.query().with('user').with('node').with('comments').where('id', id).fetch()
     return discuss
   }
 }

@@ -47,4 +47,4 @@ Route.group(() => {
   Route.get('article_comments', 'ArticleCommentController.index').as('article_comments.index')
   Route.get('discuss_comments', 'DiscussCommentController.index').as('discuss_comments.index')
   Route.get('video_comments', 'VideoCommentController.index').as('video_comments.index')
-}).prefix('api/v1').middleware(['auth']).namespace('Api')
+}).prefix('api/v1').namespace('Api')
