@@ -26,10 +26,7 @@ class CrawlerLive extends Task {
 
   async doTask(task) {
     const live_url = await this.getLiveUrl(task)
-    let video_id = task.id
-    if(return_data.code === 200) {
-      await Video.query().where('id', video_id).update({ url: live_url })
-    }
+    await Video.query().where('id', task.id).update({ url: live_url })
   }
 
   async getLiveUrl(task) {
