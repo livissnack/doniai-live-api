@@ -1,5 +1,6 @@
 'use strict'
 
+const Mail = use('Mail')
 const Http = use('got')
 const Video = use('App/Models/Video')
 const BaseUrl = 'https://hi.doniai.com/api/v1.0'
@@ -32,6 +33,20 @@ class TestController {
       .update({ url: live_url })
     }
     return body
+  }
+
+  async mail() {
+    let user = {
+      username: 'guanxin',
+      email: 'brucesnack@outlook.com'
+    }
+    await Mail.send('welcome', user, (message) => {
+      message
+        .to(user.email)
+        .from('brucesnack@outlook.com')
+        .subject('Welcome to yardstick')
+    })
+    return 'send email success'
   }
 }
 

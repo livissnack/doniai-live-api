@@ -17,6 +17,7 @@
 const Route = use('Route')
 
 Route.get('/', 'TestController.index')
+Route.get('/mail', 'TestController.mail')
 
 /* frontend all api routers */
 Route.group(() => {

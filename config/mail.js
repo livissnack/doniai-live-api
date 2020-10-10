@@ -48,9 +48,9 @@ module.exports = {
   */
   ses: {
     driver: 'ses',
-    accessKeyId: Env.get('SES_KEY'),
-    secretAccessKey: Env.get('SES_SECRET'),
-    region: 'us-east-1',
+    accessKeyId: Env.get('AWS_ACCESS_KEY_ID'),
+    secretAccessKey: Env.get('AWS_ACCESS_SECRET_KEY'),
+    region: Env.get('AWS_REGION', 'us-east-2'),
     rateLimit: 10
   },
 
